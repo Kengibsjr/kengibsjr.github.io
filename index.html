@@ -1,194 +1,513 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Gibson Kennedy — Portfolio, about, projects and contact." />
-  <title>Gibson Kennedy — Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kenney Gibson</title>
+  <style>
+    :root {
+      --primary-color: #003366;
+      --secondary-color: #0055aa;
+      --accent-color: #ffcc00;
+      --text-color: #222;
+      --bg-color: #f5f7fa;
+      --white: #fff;
+      --shadow: rgba(0,0,0,0.1);
+      --shadow-hover: rgba(0,0,0,0.15);
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --transition: all 0.3s ease;
+    }
 
-  <!-- External stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 1rem 4rem;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Square profile photo */
+.profile-photo {
+  width: 140px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px; /* slight rounding, still square */
+  border: 0.5px solid var(--accent-color);
+  box-shadow: 0 6px 15px var(--shadow);
+}
+
+/* Text alignment reset */
+.header-text {
+  text-align: left;
+}
+
+/* Keep center alignment on small screens */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+}
+
+
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px var(--shadow);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--primary-color);
+      margin: 3px 0;
+      transition: var(--transition);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 600;
+      border-left: 5px solid var(--primary-color);
+      padding-left: 15px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 15px;
+      width: 50px;
+      height: 2px;
+      background: var(--accent-color);
+    }
+
+    .about p {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .skill {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: var(--transition);
+      box-shadow: 0 4px 8px var(--shadow);
+    }
+
+    .skill:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px var(--shadow-hover);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px var(--shadow);
+      padding: 2rem;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px var(--shadow-hover);
+      border-color: var(--secondary-color);
+    }
+
+    .project h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .project p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .continue-btn {
+  color: var(--red);
+  border: none;
+}
+
+    .blog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .blog {
+      background: var(--white);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px var(--shadow);
+      padding: 2rem;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .blog:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px var(--shadow-hover);
+      border-color: var(--secondary-color);
+    }
+
+    .blog h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .blog p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 5rem;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin-left: 5px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    footer a:hover,
+    footer a:focus {
+      text-decoration: underline;
+      color: var(--white);
+    }
+
+    /* Focus styles for accessibility */
+    a:focus,
+    button:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      nav .nav-container {
+        justify-content: space-between;
+      }
+
+      nav a {
+        display: none;
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ a {
+        display: block;
+      }
+
+      .nav-container input[type="checkbox"] {
+        display: none;
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ .menu-toggle span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ .menu-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ .menu-toggle span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      section {
+        padding: 0 1rem;
+        margin: 3rem auto;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .skills {
+        justify-content: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Gibson Kennedy home">
-        <div class="logo">GK</div>
-        <span class="brand-text">Gibson Kennedy</span>
-      </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
-        <ul id="primary-nav" class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <button id="theme-toggle" class="theme-toggle" aria-pressed="false" title="Toggle dark mode">🌙</button>
+  <nav>
+    <div class="nav-container">
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#blog">Blog</a>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <!-- Hero -->
-    <section id="home" class="hero" aria-label="Introduction">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Hello — I'm <span class="accent">Kennedy</span></h1>
-          <p class="lead">I am a programmer. I blend creative design with clean code to deliver products people love.</p>
-          <p class="hero-cta">
-            <a class="btn primary" href="#work">See my work</a>
-            <a class="btn ghost" href="#contact">Get in touch</a>
-          </p>
-        </div>
+  <header>
+  <div class="header-content">
+    <img src="Ken.jpg" alt="Kennedy Gibson" class="profile-photo">
 
-        <div class="hero-card" aria-hidden="false">
-          <div class="profile-photo" role="img" aria-label="Portrait of Gibson Kennedy"></div>
-          <ul class="social-inline" aria-hidden="true">
-            <li><a href="#" aria-label="Github (placeholder)">GH</a></li>
-            <li><a href="#" aria-label="LinkedIn (placeholder)">IN</a></li>
-            <li><a href="#" aria-label="Twitter (placeholder)">TW</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section about">
-      <div class="container">
-        <h2>About Me</h2>
-        <div class="about-grid">
-          <div>
-            <p> Data Analysis approach. I focus on accessibility, performance, and clarity. I enjoy turning complex problems into simple, beautiful solutions.</p>
-            <ul class="skills">
-              <li>HTML / CSS / JavaScript</li>
-              <li>Responsive & accessible design</li>
-              <li>UI/UX & interaction design</li>
-              <li>Performance-focused development</li>
-            </ul>
-          </div>
-
-          <div class="stats">
-            <div class="stat">
-              <div class="stat-num">8+</div>
-              <div class="stat-label">Years experience</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">50+</div>
-              <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat">
-              <div class="stat-num">20</div>
-              <div class="stat-label">Happy clients</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work / Portfolio -->
-    <section id="work" class="section work">
-      <div class="container">
-        <h2>Selected Work</h2>
-        <div class="grid projects" id="projects">
-          <!-- Project cards (can be replaced or extended) -->
-          <article class="project-card">
-            <div class="project-media" style="background-image:url('');"><span class="project-placeholder">Project 1</span></div>
-            <div class="project-body">
-              <h3>Project One</h3>
-              <p>Design and implementation of a responsive marketing site with a focus on conversion and performance.</p>
-              <a class="btn small" href="#">View case</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-media"><span class="project-placeholder">Project 2</span></div>
-            <div class="project-body">
-              <h3>Project Two</h3>
-              <p>Interactive single-page app with local-first UX and offline support.</p>
-              <a class="btn small" href="#">View case</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-media"><span class="project-placeholder">Project 3</span></div>
-            <div class="project-body">
-              <h3>Project Three</h3>
-              <p>Design system and component library for a fast-growing product team.</p>
-              <a class="btn small" href="#">View case</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="section testimonials">
-      <div class="container">
-        <h2>What clients say</h2>
-        <div class="test-grid">
-          <blockquote class="testimonial">
-            <p>"Gibson took our product from idea to launch — the UI is clean, fast and a joy to use."</p>
-            <footer>— Alex Morgan, Product Lead</footer>
-          </blockquote>
-
-          <blockquote class="testimonial">
-            <p>"Highly communicative, and extremely detail-oriented. The final result exceeded expectations."</p>
-            <footer>— Jane Doe, CEO</footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>If you’d like to work together, send a message and I’ll get back to you.</p>
-
-        <form id="contact-form" class="contact-form" novalidate>
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
-          </div>
-
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required>
-          </div>
-
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
-          </div>
-
-          <div class="form-actions">
-            <button class="btn primary" type="submit">Send message</button>
-            <button class="btn ghost" type="reset">Reset</button>
-          </div>
-
-          <div id="form-status" role="status" aria-live="polite"></div>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Gibson Kennedy — All rights reserved.</p>
-      <p class="small">Built with care — accessible and responsive.</p>
+    <div class="header-text">
+      <h1>Hello, I’m Kennedy Gibson</h1>
+      <p>A seasoned teacher.</p>
     </div>
-  </footer>
+  </div>
+</header>
 
-  <!-- External JavaScript -->
-  <script src="script.js" defer></script>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a Web Developer and Software Engineer skilled in both frontend and backend development.  
+      My frontend stack includes <strong>HTML, CSS, and JavaScript</strong>, while my backend expertise lies in <strong>Python and Django</strong>.
+    </p>
+    <p>
+      I enjoy transforming ideas into functional, beautiful, and impactful products whether it’s a sleek user interface or a complex backend logic.
+      I’m currently focused on improving my craft and exploring modern tech that powers the web.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>My Tech Stack</h2>
+    <div class="skills">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Python</span>
+      <span class="skill">Django</span>
+      <span class="skill">Git & GitHub</span>
+      <span class="skill">REST APIs</span>
+      <span class="skill">Responsive Design</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+
+      <div class="project">
+        <h3>Cybersecurity Plan for Secure Online Transactions in ShopGuard</h3>
+        <p>As a Cybersecurity Analyst at ShopGuard, I put together a security plan to get our website’s protection on par with big e-commerce players like Temu, Jumia, Amazon, and eBay. My goal is to keep customer info and transactions under lock and key. I dug into some networking and security research to back up my plan <a href="shopguard.html">
+  <button class="continue-btn">
+    Continue reading
+    <span style="font-size: 18px;">→</span>
+  </button>
+</a></p>
+      </div>
+
+      <div class="project">
+        <h3>Quadratic Equation Solver</h3>
+        <p>The Quadratic Equation Solver is a Python-based project that demonstrates my backend logic and problem-solving skills. It takes user input for coefficients and efficiently computes the roots of quadratic equations, displaying both real and complex results. The project showcases my ability to apply mathematical logic in software, implement error handling, and create user-friendly solutions for computational tasks. It reflects my backend expertise and ability to turn mathematical concepts into functional applications.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <div class="blog">
+
+      <div class="blog">
+        <h3>A Note-Taking App</h3>
+        <p>The Note-Taking App is a personal productivity project I built to help users easily create, organize, and manage notes. Designed with a clean, intuitive interface using HTML, CSS, and JavaScript, the app focuses on simplicity and speed. It allows users to add, edit, and delete notes seamlessly while automatically saving data to the browser’s local storage, ensuring notes are always available even after refreshing the page. This project highlights my skills in frontend development, DOM manipulation, and creating interactive user experiences with pure JavaScript.</p>
+      </div>
+
+      <div class="blog">
+        <h3>Quadratic Equation Solver</h3>
+        <p>The Quadratic Equation Solver is a Python-based project that demonstrates my backend logic and problem-solving skills. It takes user input for coefficients and efficiently computes the roots of quadratic equations, displaying both real and complex results. The project showcases my ability to apply mathematical logic in software, implement error handling, and create user-friendly solutions for computational tasks. It reflects my backend expertise and ability to turn mathematical concepts into functional applications.</p>
+      </div>
+    </div>
+  </section>
+
+
+ <footer>
+  <p>
+    <strong>Email:</strong> <a href="mailto:kengibsjr@mail.com">kengibsjr@gmail.com</a>, 
+    <strong>GitHub:</strong> <a href="https://github.com/kengibsjr">https://github.com/kengibsjr</a>,
+    <strong>WhatsApp:</strong> <a href="https://wa.me/2348025417864">+234 8025417864</a>
+  </p>
+  <p>&copy; 2025 gibsonkennedy.name.ng</p>
+</footer>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
