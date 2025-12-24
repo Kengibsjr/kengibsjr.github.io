@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Plan for Secure Online Transactions in ShopGuard</title>
+  <style>
+    :root {
+      --primary-color: #003366;
+      --secondary-color: #0055aa;
+      --accent-color: #ffcc00;
+      --text-color: #222;
+      --bg-color: #f5f7fa;
+      --white: #fff;
+      --shadow: rgba(0,0,0,0.1);
+      --shadow-hover: rgba(0,0,0,0.15);
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --transition: all 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      text-align: center;
+      padding: 5rem 1rem 4rem;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    /* Square profile photo */
+    .profile-photo {
+      width: 140px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px; /* slight rounding, still square */
+      border: 0.5px solid var(--accent-color);
+      box-shadow: 0 6px 15px var(--shadow);
+    }
+
+    /* Text alignment reset */
+    .header-text {
+      text-align: left;
+    }
+
+    nav {
+      background: var(--white);
+      box-shadow: 0 2px 10px var(--shadow);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary-color);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--secondary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Blog Section Styling */
+    .blog-section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .blog-title {
+      color: var(--primary-color);
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .blog-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    .blog-subtitle {
+      color: var(--secondary-color);
+      font-size: 1.4rem;
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #eee;
+    }
+
+    .blog-content {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px var(--shadow);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .blog-content p {
+      margin-bottom: 1.2rem;
+    }
+
+    .blog-content ul, .blog-content ol {
+      margin: 1.2rem 0 1.2rem 2rem;
+    }
+
+    .blog-content li {
+      margin-bottom: 0.8rem;
+    }
+
+    .blog-content strong {
+      color: var(--primary-color);
+    }
+
+    .blog-content em {
+      color: #555;
+    }
+
+    .blog-references {
+      background: #f0f5ff;
+      padding: 1.8rem;
+      border-radius: 8px;
+      border-left: 5px solid var(--secondary-color);
+      margin-top: 2.5rem;
+      font-size: 0.95rem;
+    }
+
+    .blog-references h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .blog-references ul {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .blog-references li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .blog-references li::before {
+      content: '•';
+      color: var(--accent-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--primary-color);
+      margin: 3px 0;
+      transition: var(--transition);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 5rem;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+    }
+
+    footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin-left: 5px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    footer a:hover,
+    footer a:focus {
+      text-decoration: underline;
+      color: var(--white);
+    }
+
+    /* Focus styles for accessibility */
+    a:focus,
+    button:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      nav .nav-container {
+        justify-content: space-between;
+      }
+
+      nav a {
+        display: none;
+        margin: 10px 0;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ a {
+        display: block;
+      }
+
+      .nav-container input[type="checkbox"] {
+        display: none;
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ .menu-toggle span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ .menu-toggle span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-container input[type="checkbox"]:checked ~ .menu-toggle span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+
+      .blog-section {
+        padding: 0 1rem;
+        margin: 3rem auto;
+      }
+
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .blog-title {
+        font-size: 1.8rem;
+      }
+
+      .blog-subtitle {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <a href="index.html">Home</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <img src="Ken.jpg" alt="Kennedy Gibson" class="profile-photo">
+      <div class="header-text">
+        <h1>Hello, I’m Kennedy Gibson</h1>
+        <p>A seasoned teacher.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Blog Section -->
+  <section id="blog" class="blog-section">
+    <h2 class="blog-title">Cybersecurity Plan for Secure Online Transactions in ShopGuard</h2>
+    
+    <div class="blog-content">
+      <p>As a Cybersecurity Analyst at ShopGuard, I put together a security plan to get our website’s protection on par with big e-commerce players like Temu, Jumia, Amazon, and eBay. My goal is to keep customer info and transactions under lock and key. I dug into some networking and security research to back up my plan (Borodin, 2024; Kurose & Ross, 2021; Lowe, 2020; Stallings, 2021; White, 2022).</p>
+
+      <h3 class="blog-subtitle">1. What's Up with Internet Providers (ISPs)?</h3>
+      <p>We run our own show here, but we have to use ISPs to move our data around. This means some risks aren't in our control. For one, someone could mess with an ISP's routing and grab data as it passes between customers and us. This is a Man-in-the-Middle (MitM) attack, and they could steal login info. Also, if someone poisons an ISP's DNS servers, people trying to reach shopguard.com could be sent to a bogus site without realizing it. And last, an ISP could screw up and announce the wrong address for our network, sending our traffic to some sketchy place.</p>
+
+      <h3 class="blog-subtitle">2. The CIA Triad – Our Guide</h3>
+      <p>ShopGuard's security is all about keeping customer info safe, using what's called the CIA Triad – that's Confidentiality, Integrity, and Availability. Think of it as the rock-solid base for protecting your info. For Confidentiality, we work hard to keep private info – like what you use on CDcare or Jumia – away from prying eyes. Secrets: We're all about keeping private stuff private, like the personal data people use on Temu, Jumia, Amazon, or eBay. Encryption is super important here – scrambling data so only authorized people can read it. We only give access to data to those who need it, which lowers the chance of theft and keeps customers feeling secure (Anderson, 2020).</p>
+      
+      <p><strong>Accuracy:</strong> We have to be sure info stays correct. On a shopping site, messing this up could be a big problem – like someone changing a shipping address or order amount halfway through. So, we use special codes and signatures to be sure no one messes with the data.</p>
+      
+      <p><strong>Always On:</strong> ShopGuard has to be there when people need it. What good is security if you can't log in during a sale because the site is down? That’s why we have backup systems, balance the load, and prep a recovery plan, so we’re always up and running.</p>
+
+      <h3 class="blog-subtitle">3. The Bad Guys: What We’re Up Against</h3>
+      <p>When we're talking about what could hit a site like ShopGuard, it's more than just basic hacking. As a cybersecurity analyst, I keep an eye on three nasty tricks that try to get around the tech and mess with people.</p>
+      
+      <p>First up is <strong>phishing</strong>. It's still a winner for hackers since it skips the tech defences and goes straight for the users. Bad guys make fake emails or messages that look like they're from ShopGuard. These try to fool people into checking their accounts on a fake site to steal their login info.</p>
+      
+      <p>Next, we have to watch out for <strong>SQL Injection (SQLi)</strong>. This is a techier attack where a hacker sneaks bad code into spots that look harmless, like our search bar or login box. If our protection isn't strong, this code can fool our database into ignoring safety checks and giving up tons of user info (Whitman & Mattord, 2021).</p>
+      
+      <p>Lastly, there's <strong>credential stuffing</strong>. This is when hackers use lists of usernames and passwords pinched from other sites. Since lots of folks reuse passwords, the hackers try those old passwords on ShopGuard to see if they still work.</p>
+
+      <h3 class="blog-subtitle">4. Our Fortress: How We Fight Back</h3>
+      <p>We have a layered strategy, like an onion. We’re using both tech smarts and solid processes (Graham et al., 2021). On the tech side, we use <strong>Encryption (TLS 1.3)</strong> to scramble data as it travels and a <strong>Web Application Firewall (WAF)</strong> to block those SQLi attacks. We also tell everyone to use <strong>Multi-Factor Authentication (MFA)</strong> to make stolen passwords useless. And we make it a point to check our security regularly and even hire people to try and hack us. This way, we can find the holes before the real bad guys. Plus, everyone here gets trained to spot scams, so we don't fall for tricky emails. This human element is just as important as our tech stuff.</p>
+
+      <div class="blog-references">
+        <h3>References</h3>
+        <ul>
+          <li>Anderson, R. (2020). Security engineering: A guide to building dependable distributed systems. Wiley.</li>
+          <li>Borodin, V. (Ed.). (2024). Computer systems application. Toronto Academic Press. ProQuest Ebook Central.</li>
+          <li>Graham, J., Howard, R., & Olson, R. (2021). Cybersecurity essentials. John Wiley & Sons.</li>
+          <li>Kurose, J. F., & Ross, K. W. (2021). Computer networking: A top-down approach (8th ed.). Pearson.</li>
+          <li>Lowe, D. (2020). Networking all-in-one for dummies (7th ed.). For Dummies.</li>
+          <li>Stallings, W. (2021). Data and computer communications (11th ed.). Pearson.</li>
+          <li>White, C. M. (2022). Data communications and computer networks: A business user's approach (9th ed.). Cengage Learning.</li>
+          <li>Whitman, M. E., & Mattord, H. J. (2021). Principles of information security (7th ed.). Cengage Learning.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+  <p>
+    <strong>Email:</strong> <a href="mailto:kengibsjr@mail.com">kengibsjr@gmail.com</a>, 
+    <strong>GitHub:</strong> <a href="https://github.com/kengibsjr">https://github.com/kengibsjr</a>,
+    <strong>WhatsApp:</strong> <a href="https://wa.me/2348025417864">+234 8025417864</a>
+  </p>
+  <p>&copy; 2025 gibsonkennedy.name.ng</p>
+</footer>
+</body>
+</html>
