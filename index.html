@@ -190,10 +190,10 @@
             color: var(--primary-color);
         }
         
-        /* About Section - Updated Profile Picture */
+        /* About Section - FIXED layout */
         .about-content {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Changed from center to flex-start */
             gap: 60px;
         }
         
@@ -256,6 +256,7 @@
         
         .profile-info {
             flex: 1;
+            padding-top: 20px; /* Added padding to shift content down */
         }
         
         .profile-info h3 {
@@ -508,6 +509,10 @@
                 gap: 40px;
             }
             
+            .profile-info {
+                padding-top: 0; /* Reset padding on mobile */
+            }
+            
             .contact-container {
                 flex-direction: column;
             }
@@ -637,7 +642,7 @@
         </div>
     </section>
 
-    <!-- About Section with Updated Profile Picture -->
+    <!-- About Section with FIXED Profile Picture -->
     <section id="about" class="about">
         <div class="container">
             <div class="section-title">
@@ -647,7 +652,9 @@
                 <div class="profile-container">
                     <div class="profile-frame">
                         <div class="profile-pic">
-                            <img src="/images/Ken.JPG" </div>
+                            <!-- FIXED: Added proper closing tag for the image -->
+                            <img src="/images/Ken.JPG" alt="Gibson Kennedy">
+                        </div>
                         <div class="profile-badge">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
@@ -813,7 +820,7 @@
             </div>
             <div class="copyright">
                 <p>&copy; 2025 gibsonkennedy.name.ng. All Rights Reserved.</p>
-                </div>
+            </div>
         </div>
     </footer>
 
