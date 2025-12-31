@@ -382,6 +382,242 @@
             color: var(--primary-color);
         }
         
+        /* NEW: Resources and Lecture Sections */
+        .resources-section, .lecture-section {
+            background-color: var(--light-gray);
+        }
+        
+        .lecture-section {
+            background-color: white;
+        }
+        
+        .file-section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .file-section-title h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .file-section-title p {
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .file-category-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .file-tab {
+            padding: 10px 25px;
+            background-color: white;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .file-tab.active, .file-tab:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .file-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .file-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .file-icon {
+            padding: 25px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .file-icon i {
+            font-size: 3rem;
+        }
+        
+        .pdf-icon {
+            background: linear-gradient(135deg, #ff5252, #ff7b7b);
+        }
+        
+        .word-icon {
+            background: linear-gradient(135deg, #2b579a, #4a7bc9);
+        }
+        
+        .ppt-icon {
+            background: linear-gradient(135deg, #d24726, #e56a4d);
+        }
+        
+        .excel-icon {
+            background: linear-gradient(135deg, #217346, #3a9d63);
+        }
+        
+        .image-icon {
+            background: linear-gradient(135deg, #9c27b0, #ba68c8);
+        }
+        
+        .file-content {
+            padding: 20px;
+        }
+        
+        .file-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .file-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--light-gray);
+            font-size: 0.85rem;
+            color: var(--gray-color);
+        }
+        
+        .file-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .file-btn {
+            flex: 1;
+            padding: 8px 12px;
+            background-color: var(--light-color);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+        
+        .file-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .file-btn i {
+            margin-right: 5px;
+        }
+        
+        .upload-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .upload-form h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .form-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .upload-area {
+            border: 2px dashed var(--primary-color);
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            background-color: rgba(44, 90, 160, 0.05);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .upload-area:hover {
+            background-color: rgba(44, 90, 160, 0.1);
+        }
+        
+        .upload-area i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .upload-area p {
+            margin-bottom: 10px;
+            color: var(--gray-color);
+        }
+        
+        .upload-area span {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Subject Filter */
+        .subject-filter {
+            margin-bottom: 30px;
+        }
+        
+        .subject-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .subject-tag {
+            padding: 8px 20px;
+            background-color: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .subject-tag.active, .subject-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
         /* Contact Section */
         .contact {
             background-color: var(--light-gray);
@@ -422,10 +658,6 @@
         .contact-details h3 {
             margin-bottom: 5px;
             font-size: 1.2rem;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
         }
         
         .form-control {
@@ -516,6 +748,10 @@
             .contact-container {
                 flex-direction: column;
             }
+            
+            .file-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
         }
         
         @media (max-width: 768px) {
@@ -568,6 +804,16 @@
                 flex-direction: column;
                 gap: 30px;
             }
+            
+            .file-category-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+            
+            .file-tab {
+                white-space: nowrap;
+            }
         }
         
         @media (max-width: 576px) {
@@ -607,6 +853,10 @@
             .philosophy-quote {
                 padding: 30px 20px;
             }
+            
+            .file-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -621,6 +871,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#philosophy">Philosophy</a></li>
                     <li><a href="#skills">Skills</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#lecture">Lecture Notes</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu">
@@ -652,7 +904,6 @@
                 <div class="profile-container">
                     <div class="profile-frame">
                         <div class="profile-pic">
-                            <!-- FIXED: Added proper closing tag for the image -->
                             <img src="/images/Ken.JPG" alt="Gibson Kennedy">
                         </div>
                         <div class="profile-badge">
@@ -669,7 +920,6 @@
                     <div class="qualifications">
                         <h4>Key Qualifications:</h4>
                         <ul>
-                           
                             <li><i class="fas fa-check-circle"></i> TRCN Certified </li>
                             <li><i class="fas fa-check-circle"></i> 11+ Years Classroom Experience</li>
                             <li><i class="fas fa-check-circle"></i> Curriculum Development Specialist</li>
@@ -689,13 +939,14 @@
                 <h2>My Teaching Philosophy</h2>
             </div>
             <div class="philosophy-content">
-                <h3>"Learning is the breeze that turns a quiet ember into a roaring fire."</h3>
-                <p>A teacher's approach to education is based on the premise that students have different strengths, interests and styles of learning. A teacher strives to establish a safe, supported classroom environment in which all students can seek knowledge, take risks and develop their own curiosity.</p>
-                <p>I focuses on developing critical-thinking skills rather than rote memorization; thus, developing a student's ability to comprehend, analyze and synthesize information that prepares for the experiences of everyday living beyond the confines of the classroom. This goal is accomplished by providing opportunities for students to apply concepts in the "real world" using project-based learning, allowing for a connection between what is learned in school and how students may live/dream.</p>
-                <p>Technology has the propensity, if used properly, to differentiate learning opportunities and to enhance the way students become engaged in learning situations. The purpose of technology is not to replace traditional teaching methods, but rather to augment them by providing students with an array of options in which to personalise their learning experience and collaborate with other students.</p>
+                <h3>Education is not the filling of a pail, but the lighting of a fire.</h3>
+                <p>My approach to teaching is rooted in the belief that every student has unique strengths, interests, and learning styles. I strive to create a classroom environment where students feel safe to take risks, ask questions, and explore their curiosities.</p>
+                <p>I emphasize the development of critical thinking skills over rote memorization, preparing students not just for tests, but for life beyond the classroom. By integrating real-world applications and project-based learning, I help students see the relevance of their education to their own lives and future aspirations.</p>
+                <p>Technology, when used purposefully, can be a powerful tool for differentiation and engagement. I incorporate digital tools not as replacements for traditional teaching, but as enhancements that allow for personalized learning paths and collaborative opportunities.</p>
                 
                 <div class="philosophy-quote">
-                    <p>The most important attitude that can be formed is that of desire to go on learning. This is the foundation of all true education.</p><div class="author">- John Dewey</div>
+                    <p>The most important attitude that can be formed is that of desire to go on learning. This is the foundation of all true education.</p>
+                    <div class="author">- John Dewey</div>
                 </div>
             </div>
         </div>
@@ -737,6 +988,354 @@
                     <i class="fas fa-handshake"></i>
                     <h3>Parent & Community Engagement</h3>
                     <p>Effective communication strategies, parent-teacher collaboration, community partnership development, and extracurricular program coordination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Teaching Resources</h2>
+            </div>
+            <div class="file-section-title">
+                <h3>Educational Materials & Resources</h3>
+                <p>Downloadable teaching resources, lesson plans, worksheets, and educational materials in various formats.</p>
+            </div>
+            
+            <div class="file-category-tabs" id="resourcesTabs">
+                <div class="file-tab active" data-category="all">All Resources</div>
+                <div class="file-tab" data-category="pdf">PDF Files</div>
+                <div class="file-tab" data-category="word">Word Documents</div>
+                <div class="file-tab" data-category="ppt">PowerPoint</div>
+                <div class="file-tab" data-category="image">Images</div>
+            </div>
+            
+            <div class="file-grid" id="resourcesGrid">
+                <!-- Resource items -->
+                <div class="file-item" data-category="pdf">
+                    <div class="file-icon pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Mathematics Worksheets</h4>
+                        <p>Comprehensive set of algebra worksheets for secondary students with answer keys.</p>
+                        <div class="file-meta">
+                            <span>PDF • 2.4 MB</span>
+                            <span>Updated: 03/2025</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="word">
+                    <div class="file-icon word-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Lesson Plan Template</h4>
+                        <p>Editable lesson plan template with sections for objectives, activities, and assessment.</p>
+                        <div class="file-meta">
+                            <span>DOCX • 1.1 MB</span>
+                            <span>Updated: 02/2025</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="ppt">
+                    <div class="file-icon ppt-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Science Presentation</h4>
+                        <p>Interactive PowerPoint on photosynthesis with animations and diagrams.</p>
+                        <div class="file-meta">
+                            <span>PPTX • 4.7 MB</span>
+                            <span>Updated: 01/2025</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="image">
+                    <div class="file-icon image-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Educational Infographics</h4>
+                        <p>Visual aids and infographics for classroom display and student reference.</p>
+                        <div class="file-meta">
+                            <span>JPG/PNG • 3.2 MB</span>
+                            <span>Updated: 12/2024</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="pdf">
+                    <div class="file-icon pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Assessment Rubrics</h4>
+                        <p>Collection of grading rubrics for various subjects and project types.</p>
+                        <div class="file-meta">
+                            <span>PDF • 1.8 MB</span>
+                            <span>Updated: 11/2024</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="excel">
+                    <div class="file-icon excel-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Grade Tracker</h4>
+                        <p>Excel spreadsheet for tracking student grades and performance analytics.</p>
+                        <div class="file-meta">
+                            <span>XLSX • 0.9 MB</span>
+                            <span>Updated: 10/2024</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upload-section">
+                <h4>Upload New Resource</h4>
+                <div class="upload-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Resource Title" id="resourceTitle">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="resourceType">
+                                <option value="">Select File Type</option>
+                                <option value="pdf">PDF Document</option>
+                                <option value="word">Word Document</option>
+                                <option value="ppt">PowerPoint</option>
+                                <option value="excel">Excel Spreadsheet</option>
+                                <option value="image">Image File</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Resource Description" rows="3" id="resourceDesc"></textarea>
+                    </div>
+                    <div class="upload-area" id="resourceUpload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop files here or click to browse</p>
+                        <span>Supports PDF, DOC, PPT, XLS, JPG, PNG (Max 10MB)</span>
+                    </div>
+                    <button class="btn" id="uploadResourceBtn">Upload Resource</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lecture Notes Section -->
+    <section id="lecture" class="lecture-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lecture Notes</h2>
+            </div>
+            <div class="file-section-title">
+                <h3>Comprehensive Lecture Materials</h3>
+                <p>Detailed lecture notes, presentations, and study materials organized by subject and topic.</p>
+            </div>
+            
+            <div class="subject-filter">
+                <div class="subject-tags" id="lectureSubjects">
+                    <div class="subject-tag active" data-subject="all">All Subjects</div>
+                    <div class="subject-tag" data-subject="mathematics">Mathematics</div>
+                    <div class="subject-tag" data-subject="science">Science</div>
+                    <div class="subject-tag" data-subject="english">English</div>
+                    <div class="subject-tag" data-subject="history">History</div>
+                    <div class="subject-tag" data-subject="computer">Computer Science</div>
+                </div>
+            </div>
+            
+            <div class="file-category-tabs" id="lectureTabs">
+                <div class="file-tab active" data-category="all">All Formats</div>
+                <div class="file-tab" data-category="pdf">PDF Notes</div>
+                <div class="file-tab" data-category="ppt">Presentations</div>
+                <div class="file-tab" data-category="word">Handouts</div>
+            </div>
+            
+            <div class="file-grid" id="lectureGrid">
+                <!-- Lecture items -->
+                <div class="file-item" data-category="pdf" data-subject="mathematics">
+                    <div class="file-icon pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Algebra Fundamentals</h4>
+                        <p>Complete lecture notes on algebraic expressions, equations, and inequalities.</p>
+                        <div class="file-meta">
+                            <span>Mathematics • PDF • 3.1 MB</span>
+                            <span>Chapters: 1-5</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="ppt" data-subject="science">
+                    <div class="file-icon ppt-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Biology: Cell Structure</h4>
+                        <p>Interactive presentation on cell organelles and their functions with diagrams.</p>
+                        <div class="file-meta">
+                            <span>Science • PPTX • 5.2 MB</span>
+                            <span>Slides: 42</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="word" data-subject="english">
+                    <div class="file-icon word-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Literature Analysis Guide</h4>
+                        <p>Step-by-step guide to analyzing literary texts with examples and exercises.</p>
+                        <div class="file-meta">
+                            <span>English • DOCX • 2.3 MB</span>
+                            <span>Pages: 28</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="pdf" data-subject="history">
+                    <div class="file-icon pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>World History Timeline</h4>
+                        <p>Comprehensive timeline of major world events from ancient to modern times.</p>
+                        <div class="file-meta">
+                            <span>History • PDF • 4.5 MB</span>
+                            <span>Period: Ancient-Modern</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="ppt" data-subject="computer">
+                    <div class="file-icon ppt-icon">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Programming Basics</h4>
+                        <p>Introduction to programming concepts with Python examples and exercises.</p>
+                        <div class="file-meta">
+                            <span>Computer Science • PPTX • 6.1 MB</span>
+                            <span>Slides: 58</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="file-item" data-category="pdf" data-subject="mathematics">
+                    <div class="file-icon pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="file-content">
+                        <h4>Geometry Theorems</h4>
+                        <p>Collection of geometry theorems with proofs and practical applications.</p>
+                        <div class="file-meta">
+                            <span>Mathematics • PDF • 2.8 MB</span>
+                            <span>Theorems: 35</span>
+                        </div>
+                        <div class="file-actions">
+                            <a href="#" class="file-btn"><i class="fas fa-eye"></i> Preview</a>
+                            <a href="#" class="file-btn"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="upload-section">
+                <h4>Upload New Lecture Notes</h4>
+                <div class="upload-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Lecture Title" id="lectureTitle">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="lectureSubject">
+                                <option value="">Select Subject</option>
+                                <option value="mathematics">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="english">English</option>
+                                <option value="history">History</option>
+                                <option value="computer">Computer Science</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select class="form-control" id="lectureFormat">
+                                <option value="">Select Format</option>
+                                <option value="pdf">PDF Document</option>
+                                <option value="word">Word Document</option>
+                                <option value="ppt">PowerPoint</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Topic/Chapter" id="lectureTopic">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Lecture Description" rows="3" id="lectureDesc"></textarea>
+                    </div>
+                    <div class="upload-area" id="lectureUpload">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag and drop lecture files here or click to browse</p>
+                        <span>Supports PDF, DOC, PPT (Max 15MB)</span>
+                    </div>
+                    <button class="btn" id="uploadLectureBtn">Upload Lecture Notes</button>
                 </div>
             </div>
         </div>
@@ -878,6 +1477,151 @@
                 this.style.transform = 'scale(1)';
             });
         }
+        
+        // Resources Filtering
+        const resourcesTabs = document.querySelectorAll('#resourcesTabs .file-tab');
+        const resourcesItems = document.querySelectorAll('#resourcesGrid .file-item');
+        
+        resourcesTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                resourcesTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show/hide items based on category
+                resourcesItems.forEach(item => {
+                    if(category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Lecture Filtering
+        const lectureSubjects = document.querySelectorAll('#lectureSubjects .subject-tag');
+        const lectureTabs = document.querySelectorAll('#lectureTabs .file-tab');
+        const lectureItems = document.querySelectorAll('#lectureGrid .file-item');
+        
+        // Subject filtering
+        lectureSubjects.forEach(tag => {
+            tag.addEventListener('click', function() {
+                // Remove active class from all subject tags
+                lectureSubjects.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tag
+                this.classList.add('active');
+                
+                filterLectureItems();
+            });
+        });
+        
+        // Format filtering
+        lectureTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all format tabs
+                lectureTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                filterLectureItems();
+            });
+        });
+        
+        function filterLectureItems() {
+            const activeSubject = document.querySelector('#lectureSubjects .subject-tag.active').getAttribute('data-subject');
+            const activeFormat = document.querySelector('#lectureTabs .file-tab.active').getAttribute('data-category');
+            
+            lectureItems.forEach(item => {
+                const itemSubject = item.getAttribute('data-subject');
+                const itemFormat = item.getAttribute('data-category');
+                
+                const subjectMatch = activeSubject === 'all' || itemSubject === activeSubject;
+                const formatMatch = activeFormat === 'all' || itemFormat === activeFormat;
+                
+                if(subjectMatch && formatMatch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+        
+        // Upload functionality for Resources
+        document.getElementById('uploadResourceBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('resourceTitle').value;
+            const type = document.getElementById('resourceType').value;
+            const desc = document.getElementById('resourceDesc').value;
+            
+            if(!title || !type || !desc) {
+                alert('Please fill in all fields before uploading.');
+                return;
+            }
+            
+            alert(`Resource "${title}" uploaded successfully!\nType: ${type}\nDescription: ${desc}`);
+            
+            // Clear form
+            document.getElementById('resourceTitle').value = '';
+            document.getElementById('resourceType').value = '';
+            document.getElementById('resourceDesc').value = '';
+        });
+        
+        // Upload functionality for Lecture Notes
+        document.getElementById('uploadLectureBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('lectureTitle').value;
+            const subject = document.getElementById('lectureSubject').value;
+            const format = document.getElementById('lectureFormat').value;
+            const topic = document.getElementById('lectureTopic').value;
+            const desc = document.getElementById('lectureDesc').value;
+            
+            if(!title || !subject || !format || !topic || !desc) {
+                alert('Please fill in all fields before uploading.');
+                return;
+            }
+            
+            alert(`Lecture Notes "${title}" uploaded successfully!\nSubject: ${subject}\nFormat: ${format}\nTopic: ${topic}\nDescription: ${desc}`);
+            
+            // Clear form
+            document.getElementById('lectureTitle').value = '';
+            document.getElementById('lectureSubject').value = '';
+            document.getElementById('lectureFormat').value = '';
+            document.getElementById('lectureTopic').value = '';
+            document.getElementById('lectureDesc').value = '';
+        });
+        
+        // File upload area interaction
+        const uploadAreas = document.querySelectorAll('.upload-area');
+        uploadAreas.forEach(area => {
+            area.addEventListener('click', function() {
+                alert('In a real application, this would open a file browser. For this demo, please use the upload button after filling the form.');
+            });
+        });
+        
+        // Simulate file download when download buttons are clicked
+        document.querySelectorAll('.file-btn').forEach(btn => {
+            if(btn.textContent.includes('Download')) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const fileItem = this.closest('.file-item');
+                    const fileName = fileItem.querySelector('h4').textContent;
+                    alert(`Downloading "${fileName}"...\n\nIn a real application, this would download the actual file.`);
+                });
+            }
+            
+            if(btn.textContent.includes('Preview')) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const fileItem = this.closest('.file-item');
+                    const fileName = fileItem.querySelector('h4').textContent;
+                    alert(`Previewing "${fileName}"...\n\nIn a real application, this would open a preview window or PDF viewer.`);
+                });
+            }
+        });
     </script>
 </body>
 </html>
